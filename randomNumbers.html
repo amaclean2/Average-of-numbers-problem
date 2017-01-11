@@ -1,0 +1,50 @@
+<script>
+	var i = 0;
+	var avg = 0;
+	var mostLikely = 0;
+	var mostLikely2 = 0;
+	storage = [10];
+	for(var j = 1; j < 11; j++)
+	{
+		storage[j] = 0;
+	}
+	while (i < 10000)
+	{
+		var a = Math.floor((Math.random() * 10) + 1);
+		storage[a]++;
+		avg += a;
+		i++;
+	}
+	avg /= 1000;
+	for(var j = 1; j < 11; j++)
+	{
+		console.log(storage[j]);
+		if(storage[j] > mostLikely2)
+		{
+			mostLikely2 = storage[j];
+			mostLikely = j;
+		}
+	}
+	console.log(avg);
+	console.log(mostLikely);
+
+	var count;
+	var a = 0;
+	var avg2 = 0;
+	var iterations = 4000;
+	 for(var i = 0; i < iterations; i++)
+	 {
+	 	a = 0;
+	 	count = 0;
+	 	while( a < 1)
+	 	{
+	 		a += Math.random();
+	 		count++;
+	 	}
+	 	avg2 += count;
+	 }
+	 avg2 /= iterations;
+	 console.log(avg2);
+
+
+</script>

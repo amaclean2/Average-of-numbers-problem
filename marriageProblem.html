@@ -1,0 +1,34 @@
+<script>
+
+	var n = 6;
+
+	var a = [1, 2, 3, 4, 5, 6];
+	var b = [11, 12, 13, 14, 15, 16];
+	var edges = [];
+	var j = 0;
+	var edgeV2, edgeV1;
+
+	for(var i = 0; i < n; i++)
+	{
+		j = 0;
+		edgeV2 = Math.floor((Math.random() * 6) + 11);	
+		edgeV1 = Math.floor((Math.random() * 6) + 1);
+		if(i > 0)
+		{
+			while(j < i && (edgeV1 != edges[j].edgeV1 && edgeV2 != edges[j].edgeV2))
+			{
+				console.log(edges[j]);
+				j++;
+			}
+			if(j == (i - 1))
+				edges.push({edgeV1, edgeV2});
+		}
+		else
+			edges.push({edgeV1, edgeV2});
+	}
+
+	//console.log(edges);
+	
+
+
+</script>
